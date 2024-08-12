@@ -5,6 +5,7 @@
       geogebra6
       webcord-vencord
       obsidian
+      (octaveFull.withPackages (ps: with ps; [symbolic]))
     ];
   };
 }
