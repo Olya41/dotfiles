@@ -1,35 +1,19 @@
 { pkgs, ... }: {
-  services.xserver = {
-    enable = true;
+  nixcfg.gnome.enable = true;
 
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
-    xkb.layout = "ru,us";
-    xkb.options = "grp:win_space_toggle";
-  };
   services.displayManager.autoLogin.user = "olga";
 
   environment.gnome.excludePackages =
     (with pkgs; [
       gnome-connections
-      gnome-tour
     ])
     ++ (with pkgs.gnome; [
-      epiphany
       gnome-maps
       gnome-music
     ]);
 
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
   environment.sessionVariables = {
-    MOZ_ENABLE_WAYLAND = "1";
-    # NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "0";
   };
 
   environment.systemPackages = with pkgs; [

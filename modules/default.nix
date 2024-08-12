@@ -5,9 +5,7 @@
     ./firefox.nix
     ./fonts.nix
     ./hardware.nix
-    ./home.nix
     ./python.nix
-    ./rust.nix
     ./sboot.nix
     ./shell.nix
     ./unfree.nix
@@ -15,15 +13,10 @@
     ./vscode.nix
   ];
 
-  nixpkgs.overlays =
-    let
-      overlay-unstable = final: prev: {
-        unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system};
-      };
-    in
-    [ inputs.nur.overlay overlay-unstable ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixcfg = {
+    username = "olga";
+    inherit inputs;
+  };
 
   services.snapper.configs = {
     home = {
@@ -49,17 +42,6 @@
 
   boot = {
     plymouth.enable = true;
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-    kernelParams = [
-      "quiet"
-      "splash"
-      "boot.shell_on_fail"
-      "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
-    ];
     loader.timeout = 0;
   };
 

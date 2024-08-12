@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home-manager.users.olga.home.packages = [
+  hm.home.packages = [
     (pkgs.python3.withPackages
       (ps: [
         ps.astropy

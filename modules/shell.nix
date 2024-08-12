@@ -2,14 +2,14 @@
 , lib
 , ...
 }: {
-  home-manager.users.olga = {
+  hm = {
     home.packages = with pkgs; [
-      smartmontools
-      nixpkgs-fmt
       btop
+      compsize
+      nixpkgs-fmt
       ripgrep
       ripgrep-all
-      compsize
+      smartmontools
     ];
 
     programs.micro.enable = true;
