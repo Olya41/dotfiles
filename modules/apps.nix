@@ -1,11 +1,11 @@
 { pkgs, ... }: {
-  home-manager.users.olga = {
+  hm = {
     home.packages = with pkgs; [
-      telegram-desktop
+      (octaveFull.withPackages (ps: with ps; [ symbolic ]))
       geogebra6
-      webcord-vencord
       obsidian
-      (octaveFull.withPackages (ps: with ps; [symbolic]))
+      telegram-desktop
+      webcord-vencord
     ];
   };
 }

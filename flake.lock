@@ -199,6 +199,24 @@
         "type": "github"
       }
     },
+    "nixcfg": {
+      "inputs": {
+        "srvos": "srvos"
+      },
+      "locked": {
+        "lastModified": 1722684977,
+        "narHash": "sha256-od0Gz4D9AdHk2CrRpc+BjCT2zcQKARhG7cEXqkXuw6U=",
+        "owner": "averyanalex",
+        "repo": "nixcfg",
+        "rev": "8449b280592af0d3385dd4913e669e71c5a5a689",
+        "type": "github"
+      },
+      "original": {
+        "owner": "averyanalex",
+        "repo": "nixcfg",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1713805509,
@@ -310,6 +328,7 @@
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-vscode-extensions": "nix-vscode-extensions",
+        "nixcfg": "nixcfg",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur"
@@ -337,6 +356,22 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "srvos": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722473484,
+        "narHash": "sha256-gl0NnSdNwjuAgIHfmGSVx/2jKHNfN5ie8Ex6OTjfczY=",
+        "owner": "nix-community",
+        "repo": "srvos",
+        "rev": "46a59095dc9228a945bf1ee8160b397eb502ad6c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "srvos",
         "type": "github"
       }
     },

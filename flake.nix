@@ -15,22 +15,24 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcfg.url = "github:averyanalex/nixcfg";
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-unstable
+    inputs @ { nixpkgs
     , home-manager
-    , nur
-    , nix-vscode-extensions
-    , lanzaboote
-    ,
-    } @ inputs: {
+    , nixcfg
+    , ...
+    }: {
       nixosConfigurations.capybara = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./modules ];
+        modules = [
+          home-manager.nixosModule
+          nixcfg.nixosModules.default
+          ./modules
+        ];
       };
     };
 }

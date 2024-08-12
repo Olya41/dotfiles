@@ -3,7 +3,7 @@
 , lib
 , ...
 }: {
-  home-manager.users.olga = {
+  hm = {
     home.file.".vscode/argv.json".text = builtins.toJSON {
       enable-crash-reporter = false;
       password-store = "gnome-libsecret";
